@@ -108,7 +108,7 @@ function resetGame() {
     dy = 0;
     score = 0;
     gameSpeed = 100;
-    startSnake();
+    window.snake.start();
 }
 
 // Main game loop
