@@ -84,7 +84,10 @@ function resetGame() {
 }
 
 document.addEventListener('keydown', e => {
-    if (e.key === ' ') bird.velocity = bird.lift;
+    if (e.key === ' ') {
+        bird.velocity = bird.lift;
+        e.preventDefault(); // Prevent default scrolling behavior
+    }
 });
 
 canvas.addEventListener('click', () => {
