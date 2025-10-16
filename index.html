@@ -7,162 +7,189 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="scanlines"></div>
+    <!-- Pixel Transition Overlay -->
+    <div class="pixel-transition" id="pixelTransition"></div>
     
-    <!-- Resume Section -->
-    <section id="resume">
-        <h1>[ MARTIN.GASPAR ]</h1>
-        <div class="resume">
-            <div class="resume-item">
-                <h3>PROFILE</h3>
-                <p>Industrial Technology Student | Web Developer | Graphic Designer</p>
-                <p>Virgen Milagrosa Homes, Borol 2nd, Balagtas, Bulacan 3016</p>
-                <p>martinjorrellgaspar@gmail.com | 0929 342 4068</p>
-            </div>
-            
-            <div class="resume-item">
-                <h2>EDUCATION</h2>
-                <h3>Bulacan State University</h3>
-                <p>Bachelor of Industrial Technology Major in Computer</p>
-                <p>2021 - Present | Malolos City, Bulacan</p>
-                <p>Awards: Dean Lister, Gold Gear Awardee</p>
-                
-                <h3 style="margin-top: 20px;">Dr. Yanga's Colleges Inc.</h3>
-                <p>Senior High School - ICT</p>
-                <p>2015 - 2021 | Bocaue, Bulacan</p>
-                <p>Awards: With Honors, Outstanding Scholastic Reader</p>
-            </div>
-            
-            <div class="resume-item">
-                <h2>SKILLS</h2>
-                <ul>
-                    <li>Web Development: HTML, CSS, JavaScript, PHP</li>
-                    <li>Programming: Python, Java</li>
-                    <li>Design: Graphic Designing, Infinite Design, Kritika</li>
-                    <li>Database: SQL, Firebase</li>
-                    <li>Hardware: Arduino, Raspberry PI, ESP32, LEGO Robotics</li>
-                    <li>Other: Game Development, 2D Design</li>
-                </ul>
-            </div>
-            
-            <div class="resume-item">
-                <h2>EXPERIENCE</h2>
-                <h3>Panrama Technologies - Intern</h3>
-                <p>June 2024 - Present | Baliwag, Bulacan</p>
-                <ul>
-                    <li>Designed and developed Panramatechnologies.com using HTML, CSS, JavaScript</li>
-                    <li>Improved scalable SQL database for employee attendance tracking</li>
-                    <li>Designed promotional posters with Infinite Design</li>
-                </ul>
-                
-                <h3 style="margin-top: 20px;">Deviant Gallerry - Part-Time</h3>
-                <p>December 2020 - August 2022 | Balagtas, Bulacan</p>
-                <ul>
-                    <li>Designed print-ready T-shirts using Infinite Design and Kritika</li>
-                    <li>Created logos for clients and iterated designs</li>
-                </ul>
-            </div>
-            
-            <div class="resume-item">
-                <h2>PROJECTS & WORKS</h2>
-                <ul>
-                    <li>Winner Winner Mango Ginger - Research study on meat preservation</li>
-                    <li>Mapangahas - Self-made 2D game development project</li>
-                    <li>Panramatechnologies.com - Published company website</li>
-                    <li>Gaming & Mental Health Study - Research on Gen Z youth at DYCI</li>
-                </ul>
-            </div>
-        </div>
-
-         <div style="text-align: center; margin-top: 20px;">
-                    <a href="Resmu.pdf" download="Resmu.pdf" class="pixel-btn">DOWNLOAD.RESUME</a>
+    <div class="content-wrapper">
+        <div class="scanlines"></div>
+        
+        <!-- Resume Section -->
+        <section id="resume">
+            <h1>[ MARTIN.GASPAR ]</h1>
+            <div class="resume">
+                <div class="resume-item">
+                    <h3>PROFILE</h3>
+                    <p>Industrial Technology Student | Web Developer | Graphic Designer</p>
+                    <p>Virgen Milagrosa Homes, Borol 2nd, Balagtas, Bulacan 3016</p>
+                    <p>martinjorrellgaspar@gmail.com | 0929 342 4068</p>
                 </div>
-    </section>
-    
-    <!-- Flappy Bird Game Section -->
-    <section id="gameSection">
-        <h1>[ MINI.GAMES ]</h1>
-        <div class="game-nav">
-            <span id="gameTitle">Flappy Bird</span>
-        </div>
-        <div class="game-container">
-            <canvas id="flappyCanvas" width="1000" height="600"></canvas>
-        </div>
-        <div id="flappyScoreDiv" class="score">SCORE: <span id="flappyScore">0</span> | HIGH: <span id="flappyHigh">0</span></div>
-        <div class="game-controls">
-            <p id="controlsText">PRESS SPACE OR CLICK TO FLAP</p>
-            <button class="pixel-btn" id="resetBtn" onclick="window.flappy.reset()">RESTART</button>
-        </div>
-    </section>
-    
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h1>[ ART.PORTFOLIO ]</h1>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="portfolio-img">🎨</div>
-                <h3>Character Sprites</h3>
-                <p>Collection of 8-bit style character designs with smooth animations</p>
+                
+                <div class="resume-item">
+                    <h2>EDUCATION</h2>
+                    <h3>Bulacan State University</h3>
+                    <p>Bachelor of Industrial Technology Major in Computer</p>
+                    <p>2021 - Present | Malolos City, Bulacan</p>
+                    <p>Awards: Dean Lister, Gold Gear Awardee</p>
+                    
+                    <h3 style="margin-top: 20px;">Dr. Yanga's Colleges Inc.</h3>
+                    <p>Senior High School - ICT</p>
+                    <p>2015 - 2021 | Bocaue, Bulacan</p>
+                    <p>Awards: With Honors, Outstanding Scholastic Reader</p>
+                </div>
+                
+                <div class="resume-item">
+                    <h2>SKILLS</h2>
+                    <ul>
+                        <li>Web Development: HTML, CSS, JavaScript, PHP</li>
+                        <li>Programming: Python, Java</li>
+                        <li>Design: Graphic Designing, Infinite Design, Kritika</li>
+                        <li>Database: SQL, Firebase</li>
+                        <li>Hardware: Arduino, Raspberry PI, ESP32, LEGO Robotics</li>
+                        <li>Other: Game Development, 2D Design</li>
+                    </ul>
+                </div>
+                
+                <div class="resume-item">
+                    <h2>EXPERIENCE</h2>
+                    <h3>Panrama Technologies - Intern</h3>
+                    <p>June 2024 - Present | Baliwag, Bulacan</p>
+                    <ul>
+                        <li>Designed and developed Panramatechnologies.com using HTML, CSS, JavaScript</li>
+                        <li>Improved scalable SQL database for employee attendance tracking</li>
+                        <li>Designed promotional posters with Infinite Design</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 20px;">Deviant Gallerry - Part-Time</h3>
+                    <p>December 2020 - August 2022 | Balagtas, Bulacan</p>
+                    <ul>
+                        <li>Designed print-ready T-shirts using Infinite Design and Kritika</li>
+                        <li>Created logos for clients and iterated designs</li>
+                    </ul>
+                </div>
+                
+                <div class="resume-item">
+                    <h2>PROJECTS & WORKS</h2>
+                    <ul>
+                        <li>Winner Winner Mango Ginger - Research study on meat preservation</li>
+                        <li>Mapangahas - Self-made 2D game development project</li>
+                        <li>Panramatechnologies.com - Published company website</li>
+                        <li>Gaming & Mental Health Study - Research on Gen Z youth at DYCI</li>
+                    </ul>
+                </div>
             </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img">🏰</div>
-                <h3>Environment Tiles</h3>
-                <p>Retro tileset packs for platformer and RPG games</p>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="Resmu.pdf" download="Resmu.pdf" class="pixel-btn">DOWNLOAD.RESUME</a>
             </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img">👾</div>
-                <h3>Enemy Designs</h3>
-                <p>Unique pixel art monsters and boss characters</p>
+        </section>
+        
+        <!-- Flappy Bird Game Section -->
+        <section id="gameSection">
+            <h1>[ MINI.GAMES ]</h1>
+            <div class="game-nav">
+                <span id="gameTitle">Flappy Bird</span>
             </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img">⚔️</div>
-                <h3>UI Elements</h3>
-                <p>Complete game interface designs in nostalgic pixel style</p>
+            <div class="game-container">
+                <canvas id="flappyCanvas" width="1000" height="600"></canvas>
             </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img">🌟</div>
-                <h3>Effects & VFX</h3>
-                <p>Explosions, magic spells, and particle effects</p>
+            <div id="flappyScoreDiv" class="score">SCORE: <span id="flappyScore">0</span> | HIGH: <span id="flappyHigh">0</span></div>
+            <div class="game-controls">
+                <p id="controlsText">PRESS SPACE OR CLICK TO FLAP</p>
+                <button class="pixel-btn" id="resetBtn" onclick="window.flappy && window.flappy.reset()">RESTART</button>
             </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img">🎮</div>
-                <h3>Game Mockups</h3>
-                <p>Full game scene compositions and concept art</p>
+        </section>
+        
+        <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h1>[ ART.PORTFOLIO ]</h1>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">🎨</div>
+                    <h3>Character Sprites</h3>
+                    <p>Collection of 8-bit style character designs with smooth animations</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">🏰</div>
+                    <h3>Environment Tiles</h3>
+                    <p>Retro tileset packs for platformer and RPG games</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">👾</div>
+                    <h3>Enemy Designs</h3>
+                    <p>Unique pixel art monsters and boss characters</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">⚔️</div>
+                    <h3>UI Elements</h3>
+                    <p>Complete game interface designs in nostalgic pixel style</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">🌟</div>
+                    <h3>Effects & VFX</h3>
+                    <p>Explosions, magic spells, and particle effects</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">🎮</div>
+                    <h3>Game Mockups</h3>
+                    <p>Full game scene compositions and concept art</p>
+                </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Games Section -->
-    <section id="games">
-        <h1>[ GAME.COLLECTION ]</h1>
-        <div class="games-grid">
-            <div class="game-card">
-                <div class="game-icon">🕹️</div>
-                <h3>PIXEL QUEST</h3>
-                <p>A retro platformer adventure through 8 challenging worlds. Collect coins, defeat enemies, and save the kingdom!</p>
-                <p>Platform: Windows/Mac | Size: 45MB</p>
-                <button class="download-btn">DOWNLOAD.EXE</button>
+        </section>
+        
+        <!-- Games Section -->
+        <section id="games">
+            <h1>[ GAME.COLLECTION ]</h1>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon">🕹️</div>
+                    <h3>PIXEL QUEST</h3>
+                    <p>A retro platformer adventure through 8 challenging worlds. Collect coins, defeat enemies, and save the kingdom!</p>
+                    <p>Platform: Windows/Mac | Size: 45MB</p>
+                    <button class="download-btn">DOWNLOAD.EXE</button>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">👾</div>
+                    <h3>SPACE INVADERS DX</h3>
+                    <p>Classic arcade shooter reimagined with modern power-ups and boss battles. Defend Earth from alien invasion!</p>
+                    <p>Platform: Windows/Linux | Size: 32MB</p>
+                    <button class="download-btn">DOWNLOAD.EXE</button>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-icon">🏃</div>
+                    <h3>RUNNER REDUX</h3>
+                    <p>Endless runner with procedurally generated levels. How far can you go? Features online leaderboards!</p>
+                    <p>Platform: Windows/Mac/Linux | Size: 28MB</p>
+                    <button class="download-btn">DOWNLOAD.EXE</button>
+                </div>
             </div>
+        </section>
+    </div>
+
+    <script>
+        // Create pixel transition effect
+        function createPixelTransition() {
+            const container = document.getElementById('pixelTransition');
+            const totalBlocks = 400; // 20x20 grid
             
-            <div class="game-card">
-                <div class="game-icon">👾</div>
-                <h3>SPACE INVADERS DX</h3>
-                <p>Classic arcade shooter reimagined with modern power-ups and boss battles. Defend Earth from alien invasion!</p>
-                <p>Platform: Windows/Linux | Size: 32MB</p>
-                <button class="download-btn">DOWNLOAD.EXE</button>
-            </div>
+            for (let i = 0; i < totalBlocks; i++) {
+                const block = document.createElement('div');
+                block.className = 'pixel-block';
+                // Random delay for each pixel block
+                const delay = Math.random() * 0.8;
+                block.style.animationDelay = `${delay}s`;
+                container.appendChild(block);
+            }
             
-            <div class="game-card">
-                <div class="game-icon">🏃</div>
-                <h3>RUNNER REDUX</h3>
-                <p>Endless runner with procedurally generated levels. How far can you go? Features online leaderboards!</p>
-                <p>Platform: Windows/Mac/Linux | Size: 28MB</p>
-                <button class="download-btn">DOWNLOAD.EXE</button>
-            </div>
-    </section>
-    
-    <script src="flappy.js"></script>
+            // Remove transition overlay after animation completes
+            setTimeout(() => {
+                container.style.display = 'none';
+            }, 2500);
+        }
+
+        // Initialize transition on page load
+        window.addEventListener('load', createPixelTransition);
+    </script>
 </body>
 </html>
-
-
