@@ -80,12 +80,23 @@
     
     <!-- Flappy Bird Game Section -->
     <section id="gameSection">
-        <h1>[ MINI.GAME ]</h1>
-        <div class="score">SCORE: <span id="scoreDisplay">0</span> | HIGH: <span id="highScore">0</span></div>
-        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <h1>[ MINI.GAMES ]</h1>
+        <div class="game-nav">
+            <button class="pixel-btn arrow" id="leftArrow">◀</button>
+            <span id="gameTitle">Flappy Bird</span>
+            <button class="pixel-btn arrow" id="rightArrow">▶</button>
+        </div>
+        <div class="game-container">
+            <canvas id="flappyCanvas" width="400" height="600"></canvas>
+            <canvas id="tetrisCanvas" width="200" height="400" style="display: none;"></canvas>
+            <canvas id="snakeCanvas" width="400" height="400" style="display: none;"></canvas>
+        </div>
+        <div id="flappyScoreDiv" class="score">SCORE: <span id="flappyScore">0</span> | HIGH: <span id="flappyHigh">0</span></div>
+        <div id="tetrisScoreDiv" class="score" style="display: none;">SCORE: <span id="tetrisScore">0</span></div>
+        <div id="snakeScoreDiv" class="score" style="display: none;">SCORE: <span id="snakeScore">0</span></div>
         <div class="game-controls">
-            <p>PRESS SPACE OR CLICK TO FLAP</p>
-            <button class="pixel-btn" onclick="resetGame()">RESTART</button>
+            <p id="controlsText">PRESS SPACE OR CLICK TO FLAP</p>
+            <button class="pixel-btn" id="resetBtn">RESTART</button>
         </div>
     </section>
     
@@ -155,7 +166,9 @@
             </div>
     </section>
     
-    <script src="game.js"></script>
+    <script src="flappy.js"></script>
+    <script src="tetris.js"></script>
+    <script src="snake.js"></script>
+    <script src="games_manager.js"></script>
 </body>
 </html>
-
