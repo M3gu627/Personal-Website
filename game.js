@@ -162,7 +162,6 @@ function gameLoop() {
 
 function jump() {
     if (gameOver) {
-        resetGame();
         return;
     }
     
