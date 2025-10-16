@@ -9,22 +9,17 @@
 <body>
     <div class="scanlines"></div>
     
-    <!-- Resume Section -->
+   <!-- Resume Section -->
     <section id="resume">
         <h1>[ MARTIN.GASPAR ]</h1>
         <div class="resume">
-            <div class="resume-item" style="display: flex; align-items: center;">
-                <div style="margin-right: 20px;">
-                    <img src="path/to/photo.jpg" alt="Martin Jorrell H. Gaspar" style="width: 100px; height: 100px; border: 3px solid #0f0;" />
-                </div>
-                <div>
-                    <h3>PROFILE</h3>
-                    <p>Industrial Technology Student | Web Developer | Graphic Designer</p>
-                    <p>Virgen Milagrosa Homes, Borol 2nd, Balagtas, Bulacan 3016</p>
-                    <p>martinjorrellgaspar@gmail.com | 0929 342 4068</p>
-                    <div style="text-align: center; margin-top: 20px;">
-                        <a href="Martin_Gaspar_CV.pdf" download="Martin_Gaspar_CV.pdf" class="pixel-btn">DOWNLOAD.RESUME</a>
-                    </div>
+            <div class="resume-item">
+                <h3>PROFILE</h3>
+                <p>Industrial Technology Student | Web Developer | Graphic Designer</p>
+                <p>Virgen Milagrosa Homes, Borol 2nd, Balagtas, Bulacan 3016</p>
+                <p>martinjorrellgaspar@gmail.com | 0929 342 4068</p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="Martin Gaspar - CV.pdf" download="Martin_Gaspar_CV.pdf" class="pixel-btn">DOWNLOAD.RESUME</a>
                 </div>
             </div>
             
@@ -36,7 +31,7 @@
                 <p>Awards: Dean Lister, Gold Gear Awardee</p>
                 
                 <h3 style="margin-top: 20px;">Dr. Yanga's Colleges Inc.</h3>
-                <p>Senior High School - Information and Communication Technology (ICT)</p>
+                <p>Senior High School - ICT</p>
                 <p>2015 - 2021 | Bocaue, Bulacan</p>
                 <p>Awards: With Honors, Outstanding Scholastic Reader</p>
             </div>
@@ -58,27 +53,26 @@
                 <h3>Panrama Technologies - Intern</h3>
                 <p>June 2024 - Present | Baliwag, Bulacan</p>
                 <ul>
-                    <li>Designed and developed Panramatechnologies.com using HTML, CSS, JavaScript, and responsive frameworks</li>
-                    <li>Improved scalable SQL database for employee attendance tracking, enabling real-time monitoring and accurate payroll processing</li>
-                    <li>Designed posters with Infinite Design to promote products and services</li>
+                    <li>Designed and developed Panramatechnologies.com using HTML, CSS, JavaScript</li>
+                    <li>Improved scalable SQL database for employee attendance tracking</li>
+                    <li>Designed promotional posters with Infinite Design</li>
                 </ul>
                 
-                <h3 style="margin-top: 20px;">Deviant Gallery - Part-Time</h3>
+                <h3 style="margin-top: 20px;">Deviant Gallerry - Part-Time</h3>
                 <p>December 2020 - August 2022 | Balagtas, Bulacan</p>
                 <ul>
-                    <li>Designed print-ready T-shirts using Infinite Design and Kritika, ensuring they are suited for modern teens</li>
-                    <li>Created logos for clients and iterated the designs</li>
+                    <li>Designed print-ready T-shirts using Infinite Design and Kritika</li>
+                    <li>Created logos for clients and iterated designs</li>
                 </ul>
             </div>
             
             <div class="resume-item">
                 <h2>PROJECTS & WORKS</h2>
-                <h3>Published:</h3>
                 <ul>
-                    <li>Winner Winner Mango Ginger - A study on how mango ginger prolongs meat shelf storage</li>
-                    <li>Mapangahas - Self-made game on testing and applying my knowledge on 2D game development</li>
-                    <li>Panramatechnologies.com - Published website for the company Panrama Technologies</li>
-                    <li>Frequency of Engagement in Online Games as Related to Mental Health Status among Gen Z Youth in DYCI - Study on how gaming affects mental health on Dr. Yanga's Colleges Inc.</li>
+                    <li>Winner Winner Mango Ginger - Research study on meat preservation</li>
+                    <li>Mapangahas - Self-made 2D game development project</li>
+                    <li>Panramatechnologies.com - Published company website</li>
+                    <li>Gaming & Mental Health Study - Research on Gen Z youth at DYCI</li>
                 </ul>
             </div>
         </div>
@@ -172,519 +166,9 @@
             </div>
     </section>
     
-    <script>
-        // flappy.js
-        const canvas = document.getElementById('flappyCanvas');
-        const ctx = canvas.getContext('2d');
-        const scoreDisplay = document.getElementById('flappyScore');
-        const highScoreDisplay = document.getElementById('flappyHigh');
-
-        let bird = { x: 50, y: 300, velocity: 0, gravity: 1.5, lift: -25, size: 20 };
-        let pipes = [];
-        let frame = 0;
-        let gameRunning = false;
-        let score = 0;
-        let highScore = 0;
-
-        function drawBird() {
-            ctx.fillStyle = '#ffff00';
-            ctx.fillRect(bird.x, bird.y, bird.size, bird.size);
-        }
-
-        function drawPipes() {
-            ctx.fillStyle = '#0f0';
-            pipes.forEach(pipe => {
-                ctx.fillRect(pipe.x, 0, pipe.width, pipe.top);
-                ctx.fillRect(pipe.x, canvas.height - pipe.bottom, pipe.width, pipe.bottom);
-            });
-        }
-
-        function update() {
-            if (!gameRunning) return;
-
-            bird.velocity += bird.gravity;
-            bird.y += bird.velocity;
-
-            if (bird.y + bird.size > canvas.height || bird.y < 0) gameOver();
-
-            if (frame % 90 === 0) {
-                pipes.push({
-                    x: canvas.width,
-                    width: 50,
-                    top: Math.floor(Math.random() * (canvas.height / 3) + canvas.height / 6),
-                    bottom: Math.floor(Math.random() * (canvas.height / 3) + canvas.height / 6)
-                });
-            }
-
-            pipes.forEach((pipe, index) => {
-                pipe.x -= 2;
-                if (pipe.x + pipe.width < 0) pipes.splice(index, 1);
-
-                if (bird.x + bird.size > pipe.x && bird.x < pipe.x + pipe.width &&
-                    (bird.y < pipe.top || bird.y + bird.size > canvas.height - pipe.bottom)) {
-                    gameOver();
-                }
-
-                if (pipe.x === bird.x) score++;
-            });
-
-            frame++;
-
-            ctx.fillStyle = '#87ceeb';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            drawBird();
-            drawPipes();
-
-            scoreDisplay.textContent = score;
-            highScoreDisplay.textContent = highScore;
-
-            requestAnimationFrame(update);
-        }
-
-        function gameOver() {
-            gameRunning = false;
-            if (score > highScore) highScore = score;
-            alert('Game Over! Score: ' + score);
-            resetGame();
-        }
-
-        function resetGame() {
-            bird.y = 300;
-            bird.velocity = 0;
-            pipes = [];
-            frame = 0;
-            score = 0;
-            gameRunning = true;
-            update();
-        }
-
-        document.addEventListener('keydown', e => {
-            if (e.key === ' ') {
-                bird.velocity = bird.lift;
-                e.preventDefault(); // Prevent default scrolling behavior
-            }
-        });
-
-        canvas.addEventListener('click', () => {
-            bird.velocity = bird.lift;
-        });
-
-        window.flappy = {
-            start: function() {
-                gameRunning = true;
-                update();
-            },
-            stop: function() {
-                gameRunning = false;
-            },
-            reset: resetGame
-        };
-    </script>
-
-    <script>
-        // tetris.js
-        const canvas = document.getElementById('tetrisCanvas');
-        const ctx = canvas.getContext('2d');
-        const scoreDisplay = document.getElementById('tetrisScore');
-
-        const gridSize = 20;
-        const cols = 10;
-        const rows = 20;
-        canvas.width = cols * gridSize;
-        canvas.height = rows * gridSize;
-        let board = Array(rows).fill().map(() => Array(cols).fill(0));
-        let score = 0;
-        let currentPiece = null;
-        let gameLoop;
-        let gameSpeed = 1000;
-
-        const shapes = [
-            [[1, 1, 1, 1]], // I
-            [[1, 1], [1, 1]], // O
-            [[1, 1, 1], [0, 1, 0]], // T
-            [[1, 1, 1], [1, 0, 0]], // L
-            [[1, 1, 1], [0, 0, 1]], // J
-            [[1, 1, 0], [0, 1, 1]], // S
-            [[0, 1, 1], [1, 1, 0]] // Z
-        ];
-
-        const colors = ['#00ffff', '#ffff00', '#ff00ff', '#ff7f00', '#0000ff', '#0f0', '#ff0000'];
-
-        function newPiece() {
-            const id = Math.floor(Math.random() * shapes.length);
-            return {
-                shape: shapes[id],
-                color: colors[id],
-                x: Math.floor(cols / 2) - Math.floor(shapes[id][0].length / 2),
-                y: 0
-            };
-        }
-
-        function drawBoard() {
-            ctx.fillStyle = '#000';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.strokeStyle = 'rgba(0, 255, 0, 0.2)';
-            for (let i = 0; i <= cols; i++) {
-                ctx.beginPath();
-                ctx.moveTo(i * gridSize, 0);
-                ctx.lineTo(i * gridSize, canvas.height);
-                ctx.stroke();
-            }
-            for (let i = 0; i <= rows; i++) {
-                ctx.beginPath();
-                ctx.moveTo(0, i * gridSize);
-                ctx.lineTo(canvas.width, i * gridSize);
-                ctx.stroke();
-            }
-
-            for (let y = 0; y < rows; y++) {
-                for (let x = 0; x < cols; x++) {
-                    if (board[y][x]) {
-                        ctx.fillStyle = colors[board[y][x] - 1];
-                        ctx.fillRect(x * gridSize, y * gridSize, gridSize - 1, gridSize - 1);
-                    }
-                }
-            }
-        }
-
-        function drawPiece() {
-            ctx.fillStyle = currentPiece.color;
-            for (let y = 0; y < currentPiece.shape.length; y++) {
-                for (let x = 0; x < currentPiece.shape[y].length; x++) {
-                    if (currentPiece.shape[y][x]) {
-                        ctx.fillRect((currentPiece.x + x) * gridSize, (currentPiece.y + y) * gridSize, gridSize - 1, gridSize - 1);
-                    }
-                }
-            }
-        }
-
-        function collision(piece, dx = 0, dy = 0) {
-            for (let y = 0; y < piece.shape.length; y++) {
-                for (let x = 0; x < piece.shape[y].length; x++) {
-                    if (piece.shape[y][x]) {
-                        const newX = piece.x + x + dx;
-                        const newY = piece.y + y + dy;
-                        if (newX < 0 || newX >= cols || newY >= rows || (newY >= 0 && board[newY][newX])) {
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
-
-        function mergePiece() {
-            for (let y = 0; y < currentPiece.shape.length; y++) {
-                for (let x = 0; x < currentPiece.shape[y].length; x++) {
-                    if (currentPiece.shape[y][x]) {
-                        board[currentPiece.y + y][currentPiece.x + x] = shapes.indexOf(currentPiece.shape) + 1;
-                    }
-                }
-            }
-        }
-
-        function clearLines() {
-            let linesCleared = 0;
-            for (let y = rows - 1; y >= 0; y--) {
-                if (board[y].every(cell => cell !== 0)) {
-                    board.splice(y, 1);
-                    board.unshift(Array(cols).fill(0));
-                    linesCleared++;
-                    y++;
-                }
-            }
-            if (linesCleared > 0) {
-                score += linesCleared * 100;
-                scoreDisplay.textContent = score;
-            }
-        }
-
-        function rotatePiece() {
-            const newShape = Array(currentPiece.shape[0].length).fill().map(() => Array(currentPiece.shape.length).fill(0));
-            for (let y = 0; y < currentPiece.shape.length; y++) {
-                for (let x = 0; x < currentPiece.shape[y].length; x++) {
-                    newShape[x][currentPiece.shape.length - 1 - y] = currentPiece.shape[y][x];
-                }
-            }
-            const oldShape = currentPiece.shape;
-            currentPiece.shape = newShape;
-            if (collision(currentPiece)) {
-                currentPiece.shape = oldShape;
-            }
-        }
-
-        function movePiece(dx, dy) {
-            currentPiece.x += dx;
-            currentPiece.y += dy;
-            if (collision(currentPiece)) {
-                currentPiece.x -= dx;
-                currentPiece.y -= dy;
-                return false;
-            }
-            return true;
-        }
-
-        function dropPiece() {
-            if (!movePiece(0, 1)) {
-                mergePiece();
-                clearLines();
-                currentPiece = newPiece();
-                if (collision(currentPiece)) {
-                    gameOver();
-                }
-            }
-        }
-
-        function gameOver() {
-            clearInterval(gameLoop);
-            alert(`Game Over! Your score: ${score}`);
-            resetGame();
-        }
-
-        function resetGame() {
-            board = Array(rows).fill().map(() => Array(cols).fill(0));
-            score = 0;
-            scoreDisplay.textContent = score;
-            currentPiece = newPiece();
-            gameSpeed = 1000;
-            window.tetris.start();
-        }
-
-        function gameLoopFunc() {
-            dropPiece();
-            drawBoard();
-            drawPiece();
-        }
-
-        document.addEventListener('keydown', (e) => {
-            switch (e.key) {
-                case 'ArrowLeft':
-                    movePiece(-1, 0);
-                    break;
-                case 'ArrowRight':
-                    movePiece(1, 0);
-                    break;
-                case 'ArrowDown':
-                    dropPiece();
-                    break;
-                case 'ArrowUp':
-                    rotatePiece();
-                    break;
-            }
-            drawBoard();
-            drawPiece();
-        });
-
-        window.tetris = {
-            start: function() {
-                currentPiece = newPiece();
-                gameLoop = setInterval(gameLoopFunc, gameSpeed);
-                drawBoard();
-                drawPiece();
-            },
-            stop: function() {
-                clearInterval(gameLoop);
-            },
-            reset: resetGame
-        };
-    </script>
-
-    <script>
-        // snake.js
-        const canvas = document.getElementById('snakeCanvas');
-        const ctx = canvas.getContext('2d');
-        const scoreDisplay = document.getElementById('snakeScore');
-
-        const gridSize = 20;
-        const tileCount = canvas.width / gridSize;
-        let snake = [{ x: 10, y: 10 }];
-        let food = { x: 15, y: 15 };
-        let dx = 0;
-        let dy = 0;
-        let score = 0;
-        let gameSpeed = 100;
-        let gameLoop;
-
-        function drawGame() {
-            ctx.fillStyle = '#000';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.strokeStyle = 'rgba(0, 255, 0, 0.2)';
-            for (let i = 0; i <= tileCount; i++) {
-                ctx.beginPath();
-                ctx.moveTo(i * gridSize, 0);
-                ctx.lineTo(i * gridSize, canvas.height);
-                ctx.stroke();
-            }
-            for (let i = 0; i <= tileCount; i++) {
-                ctx.beginPath();
-                ctx.moveTo(0, i * gridSize);
-                ctx.lineTo(canvas.width, i * gridSize);
-                ctx.stroke();
-            }
-
-            ctx.fillStyle = '#0f0';
-            snake.forEach(segment => {
-                ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
-            });
-
-            ctx.fillStyle = '#ff00ff';
-            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 2, gridSize - 2);
-
-            scoreDisplay.textContent = score;
-        }
-
-        function moveSnake() {
-            const head = { x: snake[0].x + dx, y: snake[0].y + dy };
-
-            if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-                gameOver();
-                return;
-            }
-
-            for (let segment of snake) {
-                if (head.x === segment.x && head.y === segment.y) {
-                    gameOver();
-                    return;
-                }
-            }
-
-            snake.unshift(head);
-
-            if (head.x === food.x && head.y === food.y) {
-                score += 10;
-                generateFood();
-            } else {
-                snake.pop();
-            }
-        }
-
-        function generateFood() {
-            food.x = Math.floor(Math.random() * tileCount);
-            food.y = Math.floor(Math.random() * tileCount);
-
-            for (let segment of snake) {
-                if (food.x === segment.x && food.y === segment.y) {
-                    generateFood();
-                    return;
-                }
-            }
-        }
-
-        function gameOver() {
-            clearInterval(gameLoop);
-            alert(`Game Over! Your score: ${score}`);
-            resetGame();
-        }
-
-        function resetGame() {
-            snake = [{ x: 10, y: 10 }];
-            food = { x: 15, y: 15 };
-            dx = 0;
-            dy = 0;
-            score = 0;
-            gameSpeed = 100;
-            window.snake.start();
-        }
-
-        function gameLoopFunc() {
-            moveSnake();
-            drawGame();
-        }
-
-        document.addEventListener('keydown', (e) => {
-            switch (e.key) {
-                case 'ArrowUp':
-                    if (dy !== 1) { dx = 0; dy = -1; }
-                    break;
-                case 'ArrowDown':
-                    if (dy !== -1) { dx = 0; dy = 1; }
-                    break;
-                case 'ArrowLeft':
-                    if (dx !== 1) { dx = -1; dy = 0; }
-                    break;
-                case 'ArrowRight':
-                    if (dx !== -1) { dx = 1; dy = 0; }
-                    break;
-            }
-        });
-
-        window.snake = {
-            start: function() {
-                gameLoop = setInterval(gameLoopFunc, gameSpeed);
-                drawGame();
-            },
-            stop: function() {
-                clearInterval(gameLoop);
-            },
-            reset: resetGame
-        };
-    </script>
-
-    <script>
-        // games_manager.js
-        let currentGameIndex = 0;
-
-        const games = [
-            {
-                name: 'Flappy Bird',
-                canvas: 'flappyCanvas',
-                scoreDiv: 'flappyScoreDiv',
-                controls: 'PRESS SPACE OR CLICK TO FLAP',
-                start: window.flappy.start,
-                stop: window.flappy.stop,
-                reset: window.flappy.reset
-            },
-            {
-                name: 'Tetris',
-                canvas: 'tetrisCanvas',
-                scoreDiv: 'tetrisScoreDiv',
-                controls: 'ARROW KEYS: MOVE/ROTATE, DOWN: DROP',
-                start: window.tetris.start,
-                stop: window.tetris.stop,
-                reset: window.tetris.reset
-            },
-            {
-                name: 'Snake',
-                canvas: 'snakeCanvas',
-                scoreDiv: 'snakeScoreDiv',
-                controls: 'ARROW KEYS: MOVE',
-                start: window.snake.start,
-                stop: window.snake.stop,
-                reset: window.snake.reset
-            }
-        ];
-
-        function switchGame(index) {
-            games[currentGameIndex].stop();
-            document.getElementById(games[currentGameIndex].canvas).style.display = 'none';
-            document.getElementById(games[currentGameIndex].scoreDiv).style.display = 'none';
-
-            currentGameIndex = index;
-
-            document.getElementById(games[currentGameIndex].canvas).style.display = 'block';
-            document.getElementById(games[currentGameIndex].scoreDiv).style.display = 'block';
-            document.getElementById('gameTitle').textContent = games[currentGameIndex].name;
-            document.getElementById('controlsText').textContent = games[currentGameIndex].controls;
-            document.getElementById('resetBtn').onclick = games[currentGameIndex].reset;
-
-            games[currentGameIndex].reset();  // Reset the game
-            games[currentGameIndex].start();  // Start the game
-        }
-
-        document.getElementById('leftArrow').onclick = () => {
-            let newIndex = (currentGameIndex - 1 + games.length) % games.length;
-            switchGame(newIndex);
-        };
-
-        document.getElementById('rightArrow').onclick = () => {
-            let newIndex = (currentGameIndex + 1) % games.length;
-            switchGame(newIndex);
-        };
-
-        // Initial setup
-        switchGame(0);
-    </script>
+    <script src="flappy.js"></script>
+    <script src="tetris.js"></script>
+    <script src="snake.js"></script>
+    <script src="games_manager.js"></script>
 </body>
 </html>
