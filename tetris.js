@@ -179,7 +179,7 @@ function resetGame() {
     scoreDisplay.textContent = score;
     currentPiece = newPiece();
     gameSpeed = 1000;
-    startTetris();
+    window.tetris.start();
 }
 
 // Main game loop
