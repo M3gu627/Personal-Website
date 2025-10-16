@@ -1,4 +1,3 @@
-// tetris.js
 const canvas = document.getElementById('tetrisCanvas');
 const ctx = canvas.getContext('2d');
 const scoreDisplay = document.getElementById('tetrisScore');
@@ -35,6 +34,7 @@ function newPiece() {
     return {
         shape: shapes[id],
         color: colors[id],
+        id: id,
         x: Math.floor(cols / 2) - Math.floor(shapes[id][0].length / 2),
         y: 0
     };
@@ -103,7 +103,7 @@ function mergePiece() {
     for (let y = 0; y < currentPiece.shape.length; y++) {
         for (let x = 0; x < currentPiece.shape[y].length; x++) {
             if (currentPiece.shape[y][x]) {
-                board[currentPiece.y + y][currentPiece.x + x] = shapes.indexOf(currentPiece.shape) + 1;
+                board[currentPiece.y + y][currentPiece.x + x] = currentPiece.id + 1;
             }
         }
     }
