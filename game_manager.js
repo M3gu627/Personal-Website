@@ -1,4 +1,3 @@
-// games_manager.js
 let currentGameIndex = 0;
 
 const games = [
