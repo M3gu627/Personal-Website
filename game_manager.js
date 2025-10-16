@@ -58,4 +58,11 @@ document.getElementById('rightArrow').onclick = () => {
 };
 
 // Initial setup
-switchGame(0);
+window.addEventListener('DOMContentLoaded', function() {
+    // Ensure all game objects are loaded
+    if (window.flappy && window.tetris && window.snake) {
+        switchGame(0);
+    } else {
+        console.error('Game objects not loaded');
+    }
+});
