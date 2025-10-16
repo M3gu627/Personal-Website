@@ -1,6 +1,7 @@
-const canvas = document.getElementById('gameCanvas');
+// tetris.js
+const canvas = document.getElementById('tetrisCanvas');
 const ctx = canvas.getContext('2d');
-const scoreDisplay = document.getElementById('score');
+const scoreDisplay = document.getElementById('tetrisScore');
 
 // Game settings
 const gridSize = 20;
@@ -25,8 +26,8 @@ const shapes = [
     [[0, 1, 1], [1, 1, 0]] // Z
 ];
 
-// Colors for each shape
-const colors = ['cyan', 'yellow', 'purple', 'orange', 'blue', 'green', 'red'];
+// Colors for each shape (adjusted to fit retro theme)
+const colors = ['#00ffff', '#ffff00', '#ff00ff', '#ff7f00', '#0000ff', '#0f0', '#ff0000'];
 
 // Create a new piece
 function newPiece() {
@@ -41,8 +42,24 @@ function newPiece() {
 
 // Draw the board
 function drawBoard() {
-    ctx.fillStyle = '#f0f0f0';
+    ctx.fillStyle = '#000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Add retro grid lines
+    ctx.strokeStyle = 'rgba(0, 255, 0, 0.2)';
+    for (let i = 0; i <= cols; i++) {
+        ctx.beginPath();
+        ctx.moveTo(i * gridSize, 0);
+        ctx.lineTo(i * gridSize, canvas.height);
+        ctx.stroke();
+    }
+    for (let i = 0; i <= rows; i++) {
+        ctx.beginPath();
+        ctx.moveTo(0, i * gridSize);
+        ctx.lineTo(canvas.width, i * gridSize);
+        ctx.stroke();
+    }
+
     for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
             if (board[y][x]) {
@@ -105,7 +122,7 @@ function clearLines() {
     }
     if (linesCleared > 0) {
         score += linesCleared * 100;
-        scoreDisplay.textContent = `Score: ${score}`;
+        scoreDisplay.textContent = score;
     }
 }
 
@@ -159,10 +176,10 @@ function gameOver() {
 function resetGame() {
     board = Array(rows).fill().map(() => Array(cols).fill(0));
     score = 0;
-    scoreDisplay.textContent = `Score: ${score}`;
+    scoreDisplay.textContent = score;
     currentPiece = newPiece();
     gameSpeed = 1000;
-    gameLoop = setInterval(gameLoopFunc, gameSpeed);
+    startTetris();
 }
 
 // Main game loop
@@ -192,6 +209,16 @@ document.addEventListener('keydown', (e) => {
     drawPiece();
 });
 
-// Start game
-currentPiece = newPiece();
-gameLoop = setInterval(gameLoopFunc, gameSpeed);
+// Expose functions for manager
+window.tetris = {
+    start: function() {
+        currentPiece = newPiece();
+        gameLoop = setInterval(gameLoopFunc, gameSpeed);
+        drawBoard();
+        drawPiece();
+    },
+    stop: function() {
+        clearInterval(gameLoop);
+    },
+    reset: resetGame
+};
