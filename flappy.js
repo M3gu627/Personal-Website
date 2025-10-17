@@ -162,8 +162,7 @@ function gameLoop() {
 
 function jump() {
     if (gameOver) {
-        resetGame();
-        return;
+        return; // Prevent any action on jump when game is over
     }
 
     if (!gameStarted) {
